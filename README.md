@@ -1,0 +1,15 @@
+# Comments on insights
+- The Random Forest model performs best in capturing the rapid zigzag fluctuations of CO(GT), making it suitable for short-term forecasting but prone to overfitting noise.
+- As Random Forest model learns non linear pattern it will be good for short term prediction. Therefore, it is best for capturing short term variability
+- ARIMA gives very smooth predictions and looks almost like a straight line. This shows that it mainly learns the average trend of the data but cannot capture sudden rises and drops in CO levels.
+- GRU is consistently predicting lower CO(GT) values than ARIMA. This may be due to the nature of models which focuses on learning pattern but not the average.
+- In terms of NO2(GT) detection the RF model follows zigzag pattern like actual data and ARIMA model predicts the average like CO(GT) prediction.
+- However, GRU model fails to learn the ups and downs like actual data in terms of NO2(GT) detection.
+- In both cases for CO(GT) and NO2(GT) prediction the GRU model fails to learn the pattern and this may be due to low amount of training data. Because these neural models requires large amount of training data to recognize the learning pattern accurately.  
+- In addition, Window size affect the model training to capture the broad pattern. Therefore, selection of window size during neural model is crucial.
+- To see the prediction from the last datetime value we need to fit the arima model again with whole data set after training.
+- If we do not fit the model with whole data set then the forecast will show from the last data set of the training data set.
+- The AIC value reduced little bit after the auto detection of best p,d,q value by applying the autoarima model.
+- Number of epoch imporves the learning of the model which was observed during training.
+- Without handling the missing value or outliers the model showed poor performance which was observed during the project work. (data not shown).
+- Exploratory data analysis shows a sesonal pattern for both CO(GT) and NO2(GT).
